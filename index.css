@@ -6,11 +6,11 @@
 }
 
 body {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: url(./image/comboza.jpg) no-repeat center/cover;
-  height: 100vh;
+  color: #333333;
+  background-color: rgb(255, 251, 239);
+  font: "Comfortaa", sans-serif;
+  font-size: 14px;
+  min-height: 100vh;
 }
 
 a {
@@ -29,9 +29,9 @@ img {
 
 /* Navbar */
 .navbar {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(7, 31, 62, 1);
   color: white;
-  padding: 15px 30px;
+  padding: 20px 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -40,13 +40,12 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(8px);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .nav-links ul {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 .nav-links a {
@@ -57,44 +56,117 @@ img {
 
 .nav-links a:hover {
   color: #f0a500;
+  transition: color 0.3s ease;
 }
 
 /* Hero */
 .hero {
-  height: 100vh;
-  background: url("./image/comboza.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 30px;
+  color: rgb(0, 0, 0);
+  max-height: 500px;
+  margin-top: 20%;
   text-align: center;
-  padding: 60px 20px;
-  color: white;
+  margin: 200px;
+  padding-left: 10%;
+  border: 5px solid blue;
 }
 
-.hero-content {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 30px;
+.pool-luxury {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
 .hero h1 {
+  border: 2px solid violet;
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.btn {
-  background: #f0a500;
+.btn-buscar {
+  margin-top: 15px;
+  background: #f0a40088;
   padding: 10px 25px;
   color: white;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-buscar:hover {
+  background-color: #f0a500;
+  transition: background-color 0.3s ease;
+}
+
+/* motor de pesquisa */
+
+.hero-flex-pesquisa {
+  max-width: 500px;
+  background-color: transparent;
+  padding: 30px;
+  border-radius: 10px;
+  width: 600px;
+  height: 590px;
+  border: 2px solid green;
+}
+
+.formulario-busca {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: "Comfortaa", sans-serif;
+  border: 2px solid red;
+}
+.dropdown-viajantes {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 10;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-viajantes.show {
+  display: block;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.counter button {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  padding: 5px 10px;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.btn-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 6px;
 }
 
 /* Sections */
@@ -200,5 +272,10 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+  }
+}
+@media (min-height: 320px) {
+  .hero {
+    min-height: 320px;
   }
 }

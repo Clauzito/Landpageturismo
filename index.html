@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Turismo Top Destinos</title>
   <link rel="stylesheet" href="index.css"/>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Dosis:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+</style>
+  
 </head>
 <body>
 
@@ -18,18 +24,74 @@
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#depoimentos">Depoimentos</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li><a href="Login">Login <ion-icon name="person-circle-outline"></ion-icon>
+        </a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Descubra os melhores destinos</h1>
-      <p>Viagens nacionais e internacionais com preços imperdíveis</p>
-      <a href="#pacotes" class="btn">Ver pacotes</a>
-    </div>
-  </section>
+    <div class="hero-flex-pesquisa">
+  <h1>O Seu Sonho á um clique!</h1>
+  
+  <div class="tipo-viagem">
+    <button class="ativo">Ida e volta</button>
+    <button>Só ida</button>
+    <button>Vários destinos</button>
+  </div>
+  
+  <div class="formulario-busca">
+        Saída <input type="text" placeholder="Origem">
+    <button class="icone-troca">↔</button>
+        Destino <input type="text" placeholder="Para onde quer ir?">
+        Partida <input type="date" placeholder="Início"> 
+        Retorno <input type="date" placeholder="Fim"> 
+      
+        <!-- Botão que abre o dropdown -->
+<button onclick="toggleDropdown()" class="btn-dropdown">1 Viajante - Todas as classes</button>
+
+<!-- Dropdown oculto -->
+<div id="dropdownViajantes" class="dropdown-viajantes">
+  <p><strong>Adultos</strong> (12+)</p>
+  <div class="counter">
+    <button onclick="alterarContador('adultos', -1)">-</button>
+    <span id="adultosCount">1</span>
+    <button onclick="alterarContador('adultos', 1)">+</button>
+  </div>
+
+  <p><strong>Crianças</strong> (2–11)</p>
+  <div class="counter">
+    <button onclick="alterarContador('criancas', -1)">-</button>
+    <span id="criancasCount">0</span>
+    <button onclick="alterarContador('criancas', 1)">+</button>
+  </div>
+
+  <p><strong>Bebês</strong> (0–23 meses)</p>
+  <div class="counter">
+    <button onclick="alterarContador('bebes', -1)">-</button>
+    <span id="bebesCount">0</span>
+    <button onclick="alterarContador('bebes', 1)">+</button>
+  </div>
+
+  <label for="classe">Classe:</label>
+  <select id="classe">
+    <option>Todas as classes</option>
+    <option>Econômica</option>
+    <option>Executiva</option>
+    <option>Primeira classe</option>
+  </select>
+
+  <br><br>
+  <button onclick="aplicarViajantes()">Aplicar</button>
+</div>
+
+    <button class="btn-buscar">Buscar</button>
+  </div>
+  </div>
+  <img src="./image/luxopool.jpg" alt="foto pool luxury" class="pool-luxury">
+</div>
+</section>
 
   <!-- Pacotes -->
   <section id="pacotes" class="section">
@@ -94,6 +156,6 @@
   <footer class="footer">
     <p>&copy; 2025 Turismo Top Destinos. Todos os direitos reservados.</p>
   </footer>
-
+<script src="index.js"></script>
 </body>
 </html>
